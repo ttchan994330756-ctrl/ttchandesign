@@ -1,0 +1,65 @@
+.variable-proximity {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  font: inherit;
+  font-kerning: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  white-space: pre;
+  vertical-align: baseline;
+}
+
+.variable-proximity-measure {
+  color: inherit;
+  font: inherit;
+  font-kerning: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  white-space: pre;
+}
+
+.variable-proximity-overlay {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  color: inherit;
+  pointer-events: none;
+}
+
+.variable-proximity.is-ready .variable-proximity-measure {
+  visibility: hidden;
+}
+
+.variable-proximity.is-ready .variable-proximity-overlay {
+  visibility: visible;
+}
+
+.variable-proximity-letter {
+  position: absolute;
+  display: block;
+  overflow: visible;
+  color: inherit;
+  font: inherit;
+  font-kerning: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  paint-order: stroke fill;
+  -webkit-text-stroke-color: currentColor;
+  white-space: pre;
+  will-change: font-variation-settings, -webkit-text-stroke-width;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

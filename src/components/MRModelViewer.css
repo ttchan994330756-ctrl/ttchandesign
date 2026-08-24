@@ -1,0 +1,14 @@
+.mr-scene .forklift-loading,
+.mr-scene .forklift-error {
+  left: 64.5%;
+}
+
+.mr-scene .forklift-contact-shadow {
+  left: 51%;
+  top: 80%;
+  width: 28%;
+}
+
+@media (max-width: 760px) {
+  .mr-scene .forklift-contact-shadow { left: 54%; width: 30%; }
+}

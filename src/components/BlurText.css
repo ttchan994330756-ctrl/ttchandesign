@@ -1,0 +1,44 @@
+.blur-text {
+  display: inline;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  white-space: pre-wrap;
+}
+
+.blur-text-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.blur-text-visual { display: inline; }
+.blur-text-segment {
+  display: inline-block;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  opacity: var(--blur-from-opacity);
+  filter: var(--blur-from-filter);
+  transform: translate3d(var(--blur-from-x), var(--blur-from-y), 0);
+  will-change: transform, filter, opacity;
+}
+
+.blur-text-visual.is-visible .blur-text-segment {
+  animation: blur-text-reveal var(--blur-duration) var(--blur-ease) var(--blur-delay) both;
+}
+
+@keyframes blur-text-reveal {
+  from { opacity: var(--blur-from-opacity); filter: var(--blur-from-filter); transform: translate3d(var(--blur-from-x), var(--blur-from-y), 0); }
+  to { opacity: var(--blur-to-opacity); filter: var(--blur-to-filter); transform: translate3d(var(--blur-to-x), var(--blur-to-y), 0); }
+}

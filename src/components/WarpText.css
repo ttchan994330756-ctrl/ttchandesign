@@ -1,0 +1,28 @@
+.warp-text {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.warp-text-canvas {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.warp-text[data-warp-ready="true"] > [data-warp-text] {
+  visibility: hidden;
+}
+
+.warp-text > [data-warp-ignore] {
+  position: relative;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .warp-text-canvas {
+    opacity: .96;
+  }
+}

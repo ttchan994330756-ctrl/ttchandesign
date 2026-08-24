@@ -1,0 +1,51 @@
+node_modules/
+dist/
+.npm-cache/
+*.tsbuildinfo
+.DS_Store
+npm-debug.log*
+.env*
+.wrangler/
+.vinext/
+.next/
+
+# Local tooling, screenshots, backups, and alternate portfolio version
+.agents/
+.codex-tmp/
+.codex-*.png
+.vercel-data/
+.vercel-local/
+.vercel-roaming/
+.gh-config/
+.git-publish/
+.pnpm-store/
+preview-compressed/
+dist-deploy-*/
+current-home*.png
+home-test.png
+mr-viewer-*.png
+viewer-*.png
+TTChanDesign-no-forklift/
+*.zip
+素材/
+
+# Generated source maps/build output
+dist*/
+
+# Detail pages use WebP first; keep local JPG fallbacks out of the deploy commit.
+public/forklift-detail/*.jpg
+public/mr-detail/*.jpg
+public/tower-detail/*.jpg
+public/ink-detail/*.jpg
+public/projector-detail/*.jpg
+public/coat-rack-detail/*.jpg
+public/diagnostic-detail/*.jpg
+public/ip-detail/*.jpg
+
+# Unused full-size model exports. Runtime uses compressed/previews below 100 MB.
+public/models/diagnostic.fbx
+public/models/diagnostic.fbx.gz
+public/models/diagnostic.fbx.gz.bin
+public/models/diagnostic-optimized.glb
+public/models/ip-red-orange.glb
+public/models/ip-red-white.glb

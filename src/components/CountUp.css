@@ -1,0 +1,9 @@
+.count-up {
+  display: inline-block;
+  min-width: 3ch;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  white-space: nowrap;
+}

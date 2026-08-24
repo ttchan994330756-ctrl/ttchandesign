@@ -1,0 +1,14 @@
+.tower-scene .forklift-contact-shadow {
+  left: 50%;
+  top: 80%;
+  width: 27%;
+}
+
+.tower-scene .forklift-loading,
+.tower-scene .forklift-error {
+  left: 64.5%;
+}
+
+@media (max-width: 760px) {
+  .tower-scene .forklift-contact-shadow { left: 47%; width: 28%; }
+}

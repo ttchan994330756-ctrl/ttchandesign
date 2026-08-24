@@ -1,0 +1,69 @@
+.ip-scene .forklift-loading,
+.ip-scene .forklift-error { left: 69%; }
+
+.ip-scene canvas {
+  left: 39%;
+  width: 61%;
+  /* Keep the orbit pivot on the model while shifting its rendered layout. */
+  transform: translateX(-5%);
+}
+
+.ip-model-switch {
+  position: absolute;
+  z-index: 12;
+  /* Align the switch with the red reference frame at the right of the grid. */
+  left: 90.25%;
+  top: 45.6%;
+  width: 4.2%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, .94);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .96);
+  color: #b92a2f;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(32, 22, 22, .22);
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.ip-model-switch::before {
+  content: "↻";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: currentColor;
+  font: 700 clamp(14px, 1.5vw, 24px)/1 Arial, sans-serif;
+}
+
+.ip-model-switch-label {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + .32rem);
+  color: #b92a2f;
+  font: 600 clamp(8px, .72vw, 12px)/1.1 "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.ip-model-switch:hover:not(:disabled),
+.ip-model-switch:focus-visible {
+  border-color: #4101f6;
+  background: #4101f6;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(65, 1, 246, .2), 0 8px 22px rgba(25,35,48,.2);
+  transform: scale(1.06);
+}
+
+.ip-model-switch:hover:not(:disabled) .ip-model-switch-label,
+.ip-model-switch:focus-visible .ip-model-switch-label {
+  color: #4101f6;
+}
+
+.ip-model-switch:focus-visible { outline: 2px solid #4101f6; outline-offset: 3px; }
+.ip-model-switch:disabled { cursor: wait; }
+
+@media (max-width: 760px) {
+  .ip-scene canvas { left: 34%; width: 66%; transform: translateX(-5%); }
+}

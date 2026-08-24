@@ -1,0 +1,12 @@
+.diagnostic-scene .forklift-contact-shadow {
+  left: 53%;
+  top: 75%;
+  width: 30%;
+}
+
+.diagnostic-scene .forklift-loading,
+.diagnostic-scene .forklift-error { left: 64.5%; }
+
+@media (max-width: 760px) {
+  .diagnostic-scene .forklift-contact-shadow { left: 52%; top: 75%; width: 31%; }
+}
