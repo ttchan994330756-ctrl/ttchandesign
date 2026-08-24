@@ -49,3 +49,5 @@ public/models/diagnostic.fbx.gz.bin
 public/models/diagnostic-optimized.glb
 public/models/ip-red-orange.glb
 public/models/ip-red-white.glb
+public/models/tower-fan.glb
+.codex-tmp-*.glb

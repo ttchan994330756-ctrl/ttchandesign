@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import "./ForkliftModelViewer.css";
 import "./TowerModelViewer.css";
 
@@ -39,6 +41,9 @@ function TowerScene() {
     controls.rotateSpeed = 0.62;
     controls.zoomSpeed = 0.72;
     controls.autoRotate = false;
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco/");
+    dracoLoader.preload();
 
     scene.add(new THREE.HemisphereLight(0xf6f8ff, 0x27313e, 2.7));
     const keyLight = new THREE.DirectionalLight(0xffffff, 3.6);
@@ -150,7 +155,7 @@ function TowerScene() {
       }
     };
 
-    const loadModel = async () => {
+    const loadCompressedFbx = async () => {
       try {
         const preview = new URLSearchParams(window.location.search).has("compressed-preview");
         const compressedUrl = preview
@@ -192,7 +197,27 @@ function TowerScene() {
       }
     };
 
-    void loadModel();
+    const loadModel = () => {
+      const loader = new GLTFLoader();
+      loader.setDRACOLoader(dracoLoader);
+      loader.load(
+        "/models/tower-fan-optimized.glb",
+        (gltf) => {
+          attachModel(gltf.scene);
+          dracoLoader.dispose();
+        },
+        (event) => {
+          if (!event.total) return;
+          setProgress(Math.min(96, Math.round((event.loaded / event.total) * 96)));
+        },
+        (error) => {
+          console.warn("Optimized tower fan GLB unavailable; falling back to compressed FBX", error);
+          void loadCompressedFbx();
+        },
+      );
+    };
+
+    loadModel();
 
     const resize = () => {
       const width = Math.max(1, canvas.clientWidth);
@@ -218,6 +243,7 @@ function TowerScene() {
       resizeObserver.disconnect();
       renderer.setAnimationLoop(null);
       controls.dispose();
+      dracoLoader.dispose();
       if (loadedModel) {
         loadedModel.traverse((child) => {
           if (!(child instanceof THREE.Mesh)) return;
