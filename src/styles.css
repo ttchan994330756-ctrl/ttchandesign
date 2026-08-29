@@ -86,7 +86,7 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
 .hero-scroll-indicator-icon { width: 15px; height: 27px; overflow: visible; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
 .hero-scroll-indicator:hover, .hero-scroll-indicator:focus-visible { color: #fff; transform: translateX(-50%) translateY(-2px); outline: none; }
 .hero-scroll-indicator:focus-visible { filter: drop-shadow(0 0 8px rgba(65,1,246,.9)); }
-.hero-scroll-indicator:hover .hero-scroll-indicator-icon, .hero-scroll-indicator:focus-visible .hero-scroll-indicator-icon { animation: scroll-down 3s infinite; }
+.main__action:hover .main__scroll-box, .main__action:focus-visible .main__scroll-box { animation: scroll-down 3s infinite; }
 
 @keyframes scroll-down {
   0%, 100% { transform: translateY(0); opacity: 1; }
@@ -465,5 +465,5 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
   .gooey-nav-item.gooey-clicked { animation-duration: .68s !important; }
   .gooey-effect { transition-duration: .44s !important; }
   .gooey-nav-item::after { transition-duration: .3s, .42s !important; }
-  .hero-scroll-indicator:hover .hero-scroll-indicator-icon, .hero-scroll-indicator:focus-visible .hero-scroll-indicator-icon { animation: none; }
+  .main__action:hover .main__scroll-box, .main__action:focus-visible .main__scroll-box { animation: none; }
 }
