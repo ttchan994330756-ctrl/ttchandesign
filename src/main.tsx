@@ -443,9 +443,11 @@ function App() {
         </div>
 
         <a className="hero-scroll-indicator main__action" href="#process" aria-label="向下滚动浏览设计历程">
-          <svg className="hero-scroll-indicator-icon main__scroll-box" viewBox="0 0 24 16" aria-hidden="true">
-            <path d="m4 4 8 8 8-8" />
-          </svg>
+          <span className="main__scroll-box">
+            <svg className="hero-scroll-indicator-icon" viewBox="0 0 24 16" aria-hidden="true">
+              <path d="m4 4 8 8 8-8" />
+            </svg>
+          </span>
           <span className="hero-scroll-indicator-text">滚动</span>
         </a>
       </section>
