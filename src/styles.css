@@ -466,5 +466,6 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
   .gooey-nav-item.gooey-clicked { animation-duration: .68s !important; }
   .gooey-effect { transition-duration: .44s !important; }
   .gooey-nav-item::after { transition-duration: .3s, .42s !important; }
-  .main__scroll-box { animation: none; }
+  /* Keep the navigation cue legible even when global motion is reduced. */
+  .main__scroll-box { animation: scroll-down 3s linear infinite !important; }
 }
