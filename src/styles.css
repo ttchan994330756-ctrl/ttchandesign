@@ -82,11 +82,11 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
 .hero-portrait-tilt[data-active="true"] .portrait-education-tag { transform: translate3d(var(--card-shift-x), var(--card-shift-y), 118px) scale(1.025); box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 24px 42px rgba(4,8,20,.34); }
 
 .hero-project-marquee { position: absolute; z-index: 8; left: 16.5vw; right: 16.5vw; bottom: 12px; height: 248px; display: flex; align-items: center; overflow: hidden; pointer-events: auto; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.hero-scroll-indicator { position: absolute; z-index: 12; left: 50%; bottom: 9px; display: grid; place-items: center; width: 30px; height: 38px; color: rgba(255,255,255,.72); transform: translateX(-50%); transition: color .25s ease, transform .25s ease; }
-.hero-scroll-indicator-icon { width: 15px; height: 27px; overflow: visible; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+.hero-scroll-indicator { position: absolute; z-index: 12; left: 50%; bottom: -2px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; width: 34px; height: 38px; color: rgba(255,255,255,.76); transform: translateX(-50%); transition: color .25s ease, transform .25s ease; }
+.hero-scroll-indicator-icon { width: 14px; height: 10px; overflow: visible; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; animation: scroll-down 3s infinite; }
+.hero-scroll-indicator-text { font-size: 9px; font-weight: 520; line-height: 1; letter-spacing: .04em; white-space: nowrap; }
 .hero-scroll-indicator:hover, .hero-scroll-indicator:focus-visible { color: #fff; transform: translateX(-50%) translateY(-2px); outline: none; }
 .hero-scroll-indicator:focus-visible { filter: drop-shadow(0 0 8px rgba(65,1,246,.9)); }
-.main__action:hover .main__scroll-box, .main__action:focus-visible .main__scroll-box { animation: scroll-down 3s infinite; }
 
 @keyframes scroll-down {
   0%, 100% { transform: translateY(0); opacity: 1; }
@@ -465,5 +465,5 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
   .gooey-nav-item.gooey-clicked { animation-duration: .68s !important; }
   .gooey-effect { transition-duration: .44s !important; }
   .gooey-nav-item::after { transition-duration: .3s, .42s !important; }
-  .main__action:hover .main__scroll-box, .main__action:focus-visible .main__scroll-box { animation: none; }
+  .hero-scroll-indicator-icon { animation: none; }
 }
