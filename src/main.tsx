@@ -441,6 +441,14 @@ function App() {
             onItemClick={openHeroProject}
           />
         </div>
+
+        <a className="hero-scroll-indicator" href="#process" aria-label="向下滚动浏览设计历程">
+          <span className="hero-scroll-indicator-label">SCROLL DOWN</span>
+          <svg className="hero-scroll-indicator-icon" viewBox="0 0 24 38" aria-hidden="true">
+            <path d="M12 2v28" />
+            <path d="m5 24 7 7 7-7" />
+          </svg>
+        </a>
       </section>
 
       {forkliftViewerOpen && (
