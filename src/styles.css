@@ -221,7 +221,7 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
 .work-ambient { width: 56vw; height: 43vw; right: -27vw; top: 18vw; background: #3500a8; }
 .work-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(11, clamp(60px, 5.05vw, 86px)); grid-auto-flow: dense; gap: 4px; overflow: visible; border: 0; border-radius: 0; background: transparent; }
 .work-card { position: relative; overflow: hidden; min-height: 0; border: 1px solid rgba(87,58,255,.72); border-radius: 15px; background: #132129; isolation: isolate; transition: border-color .35s ease; }
-.work-fill-bubble { position: absolute; z-index: 0; left: calc(50% - 60px); bottom: -53px; width: 120px; height: 120px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 46% 38%, rgba(255,255,255,.2), transparent 32%), var(--acid); transform: scale(.08); transform-origin: 50% 50%; transition: transform 1.05s cubic-bezier(.16,.76,.16,1); will-change: transform; }
+.work-fill-bubble { position: absolute; z-index: 2; left: calc(50% - 60px); bottom: -53px; width: 120px; height: 120px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 46% 38%, rgba(255,255,255,.2), transparent 32%), var(--acid); transform: scale(.08); transform-origin: 50% 50%; transition: transform 1.05s cubic-bezier(.16,.76,.16,1); will-change: transform; }
 .work-card:hover, .work-card.is-hovered { border-color: rgba(255,255,255,.48); }
 .work-card:hover .work-fill-bubble, .work-card.is-hovered .work-fill-bubble { transform: scale(16); }
 .work-card.feature { grid-column: 1 / 8; grid-row: 1 / 6; }
@@ -233,6 +233,7 @@ html.motion-reduced .experience-row .experience-period { opacity: 1; filter: bri
 .work-card.banner { grid-column: 4 / 7; grid-row: 9 / 12; }
 .work-card.lower-right { grid-column: 7 / 9; grid-row: 9 / 12; }
 .work-card > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: var(--work-focus, center); opacity: 1; filter: brightness(.8); backface-visibility: hidden; }
+.work-card > img.work-award-logo { inset: 16px 16px auto auto; z-index: 1; width: 64px; height: 54px; object-fit: contain; object-position: center; opacity: .96; filter: drop-shadow(0 7px 12px rgba(0,0,0,.28)); pointer-events: none; }
 .work-wash { position: absolute; inset: 0; z-index: -1; background: transparent; }
 .work-id { position: absolute; z-index: 2; left: 18px; top: 15px; display: flex; width: 34px; flex-direction: column; align-items: center; gap: 4px; color: #fff; font-size: 18px; font-weight: 800; line-height: 1; letter-spacing: -.04em; }
 .work-id i { display: block; width: 28px; height: 2px; border-radius: 999px; background: var(--acid); }

@@ -131,11 +131,11 @@ const projectExperiences = [
 
 const projects = [
   { id: "P—01", title: "ONEN", zh: "4吨位叉车设计", image: "/works/01-forklift.webp", tags: "Five Tons Electric Forklift", size: "feature", focus: "58% 58%" },
-  { id: "P—02", title: "TRACE", zh: "探迹-博物馆文旅交互设计", image: "/works/02-mr-device.webp", tags: "Museum Interactive Devices", size: "stack-top", focus: "70% 52%" },
+  { id: "P—02", title: "TRACE", zh: "探迹-博物馆文旅交互设计", image: "/works/02-mr-device.webp", tags: "Museum Interactive Devices", size: "stack-top", focus: "70% 52%", award: { src: "/hero-projects/new-quality-award.png", alt: "新质点奖" } },
   { id: "P—03", title: "GENTRY", zh: "家用塔扇设计（欧洲市场）", image: "/works/03-tower-fan.webp", tags: "Overseas tower fan design", size: "tower", focus: "18% 55%" },
-  { id: "P—04", title: "BEE-T", zh: "‘蜂尾’墨水瓶（改良设计）", image: "/works/04-ink-bottle.webp", tags: "Improved Design Of Ink Bottle", size: "stack-bottom", focus: "55% 58%" },
+  { id: "P—04", title: "BEE-T", zh: "‘蜂尾’墨水瓶（改良设计）", image: "/works/04-ink-bottle.webp", tags: "Improved Design Of Ink Bottle", size: "stack-bottom", focus: "55% 58%", award: { src: "/hero-projects/if-design-award.png", alt: "IF 设计奖" } },
   { id: "P—05", title: "P9-C", zh: "居家投影设计", image: "/works/05-projector.webp", tags: "Home Projector", size: "lower-left", focus: "56% 52%" },
-  { id: "P—06", title: "FOLD", zh: "折叠衣帽架", image: "/works/06-coat-rack.webp", tags: "Clothes Rack Design", size: "lower-center", focus: "58% 50%" },
+  { id: "P—06", title: "FOLD", zh: "折叠衣帽架", image: "/works/06-coat-rack.webp", tags: "Clothes Rack Design", size: "lower-center", focus: "58% 50%", award: { src: "/hero-projects/gd-industrial-design-award.png", alt: "广东省大学生工业设计大赛" } },
   { id: "P—07", title: "LAUNCH", zh: "汽车诊断仪设计", image: "/works/07-diagnostic.webp", tags: "Car Diagnostic Instrument", size: "banner", focus: "64% 76%" },
   { id: "P—08", title: "TT-ROBOT", zh: "AI 潮玩应用", image: "/works/08-ip-character.webp", tags: "Trendy Toy Design", size: "lower-right", focus: "58% 62%" },
 ];
@@ -714,6 +714,9 @@ function App() {
                   <img src={project.image} alt={`${project.zh}设计项目`} loading="lazy" />
                   <div className="work-wash" />
                   <div className="work-fill-bubble" aria-hidden="true" />
+                  {project.award && (
+                    <img className="work-award-logo" src={project.award.src} alt={project.award.alt} loading="lazy" />
+                  )}
                   <div className="work-id" aria-label={`作品序号 ${project.id.replace(/\D/g, "")}`}>
                     <span>{project.id.replace(/\D/g, "")}</span>
                     <i aria-hidden="true" />
