@@ -447,8 +447,11 @@ function App() {
             <svg className="hero-scroll-indicator-icon" viewBox="0 0 24 16" aria-hidden="true">
               <path d="m4 4 8 8 8-8" />
             </svg>
+            <svg className="hero-scroll-indicator-icon" viewBox="0 0 24 16" aria-hidden="true">
+              <path d="m4 4 8 8 8-8" />
+            </svg>
           </span>
-          <span className="hero-scroll-indicator-text">滚动</span>
+          <span className="hero-scroll-indicator-text">滚动浏览</span>
         </a>
       </section>
 
